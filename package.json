@@ -1,5 +1,14 @@
 {
+  "name": "my-quickstarters",
+  "license": "MIT",
+  "author": {
+    "name": "iamspark1e",
+    "url": "https://github.com/iamspark1e/my-quickstarters"
+  },
   "dependencies": {
     "prompts": "^2.4.2"
+  },
+  "bin": {
+    "my-quickstarters": "bin/cli.mjs"
   }
 }
