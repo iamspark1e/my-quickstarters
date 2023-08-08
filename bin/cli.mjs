@@ -82,7 +82,7 @@ async function init() {
         if (!last_confirm) return;
         const root = path.join(cwd, target_dir);
         const write = (file, content = "") => {
-            const targetPath = path.join(root, renameFiles[file] ?? file)
+            const targetPath = path.join(root, file)
             if (content) {
                 fs.writeFileSync(targetPath, content)
             } else {
