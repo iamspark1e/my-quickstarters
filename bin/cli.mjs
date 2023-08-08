@@ -29,14 +29,6 @@ function copyDir(srcDir, destDir, overwrite = false) {
         copy(srcFile, destFile)
     }
 }
-const write = (file, content = "") => {
-    const targetPath = path.join(root, renameFiles[file] ?? file)
-    if (content) {
-        fs.writeFileSync(targetPath, content)
-    } else {
-        copy(path.join(templateDir, file), targetPath)
-    }
-}
 
 async function init() {
     try {
@@ -89,6 +81,14 @@ async function init() {
         const { target_dir, type, module, overwrite, last_confirm } = result
         if (!last_confirm) return;
         const root = path.join(cwd, target_dir);
+        const write = (file, content = "") => {
+            const targetPath = path.join(root, renameFiles[file] ?? file)
+            if (content) {
+                fs.writeFileSync(targetPath, content)
+            } else {
+                copy(path.join(templateDir, file), targetPath)
+            }
+        }
         if (!fs.existsSync(root)) {
             fs.mkdirSync(root, { recursive: true });
         }
