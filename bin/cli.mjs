@@ -60,8 +60,7 @@ async function init() {
                     choices: [
                         { title: "Templates", value: "templates" },
                         { title: "Common Styles/Scripts/Tools", value: "utils" },
-                    ],
-                    initial: "templates"
+                    ]
                 },
                 {
                     type: prev => prev === "utils" ? "multiselect" : "select",
