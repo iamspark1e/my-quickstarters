@@ -107,8 +107,8 @@ async function init() {
 
         if (type === "templates") {
             let files = fs.readdirSync(templateDir);
+            console.log(files);
             for (const file of files.filter((f) => f !== 'package.json')) {
-                console.log(file)
                 write(file)
             }
             const pkg = JSON.parse(
