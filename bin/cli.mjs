@@ -11,7 +11,8 @@ const utils = [
     { title: "Third Party", value: "utils/third-party" },
 ]
 const templates = [
-    { title: "Vue2 + Vite (Legacy) + MPA (with Vant v2)", value: "templates/frontend/vite-legacy-mpa" }
+    { title: "Vue2 + Vite (Legacy) + MPA (with Vant v2)", value: "templates/frontend/vite-legacy-mpa" },
+    { title: "Typescript NPM Packages (using tsup)", value: "templates/frontend/npm-package" },
 ]
 function copy(src, dest) {
     const stat = fs.statSync(src)

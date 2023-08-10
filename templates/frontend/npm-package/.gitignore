@@ -1,0 +1,9 @@
+dist
+node_modules
+TODOs.md
+temp
+.DS_Store
+debug
+lib
+coverage
+**/dist
