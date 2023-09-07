@@ -1,0 +1,49 @@
+{
+  "name": "fullstack-template",
+  "version": "0.0.1",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "client:dev": "vite ./client",
+    "client:build": "vite build ./client",
+    "client:preview": "vite preview ./client"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+  "prisma": {
+    "seed": "node server/prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.10.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "dotenv-expand": "^8.0.1",
+    "express": "^4.16.4",
+    "morgan": "^1.10.0",
+    "prisma": "^3.10.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "vite": "^2.8.0",
+    "@vicons/carbon": "^0.12.0",
+    "dayjs": "^1.10.8",
+    "naive-ui": "^2.25.8",
+    "pinia": "^2.0.11",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "vfonts": "^0.0.3",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.12"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

@@ -12,6 +12,7 @@ const utils = [
 ]
 const templates = [
     { title: "Vue2 + Vite (Legacy) + MPA (with Vant v2)", value: "templates/frontend/vite-legacy-mpa" },
+    { title: "Vite + Express.js + Prisma (fullstack)", value: "templates/fullstack/vite-express-prisma-template" },
     { title: "Typescript NPM Packages (using tsup)", value: "templates/frontend/npm-package" },
 ]
 function copy(src, dest) {
@@ -107,7 +108,6 @@ async function init() {
 
         if (type === "templates") {
             let files = fs.readdirSync(templateDir);
-            console.log(files);
             for (const file of files.filter((f) => f !== 'package.json')) {
                 write(file)
             }
