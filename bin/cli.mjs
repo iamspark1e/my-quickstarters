@@ -26,6 +26,7 @@ function copy(src, dest) {
 function copyDir(srcDir, destDir, overwrite = false) {
     fs.mkdirSync(destDir, { recursive: true })
     for (const file of fs.readdirSync(srcDir)) {
+        console.log(file)
         const srcFile = path.resolve(srcDir, file)
         const destFile = path.resolve(destDir, file)
         copy(srcFile, destFile)
