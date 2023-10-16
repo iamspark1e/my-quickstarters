@@ -20,6 +20,7 @@ function copy(src, dest) {
     if (stat.isDirectory()) {
         copyDir(src, dest)
     } else {
+        console.log(src);
         fs.copyFileSync(src, dest)
     }
 }
