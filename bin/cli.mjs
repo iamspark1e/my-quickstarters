@@ -20,19 +20,43 @@ function copy(src, dest) {
     if (stat.isDirectory()) {
         copyDir(src, dest)
     } else {
-        console.log(src);
         fs.copyFileSync(src, dest)
     }
 }
 function copyDir(srcDir, destDir, overwrite = false) {
     fs.mkdirSync(destDir, { recursive: true })
     for (const file of fs.readdirSync(srcDir)) {
-        console.log(file)
         const srcFile = path.resolve(srcDir, file)
         const destFile = path.resolve(destDir, file)
         copy(srcFile, destFile)
     }
 }
+const gitIgnoreTemplate = `# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+dist.zip
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+`
 
 async function init() {
     try {
@@ -113,6 +137,7 @@ async function init() {
             for (const file of files.filter((f) => f !== 'package.json')) {
                 write(file)
             }
+            write('.gitignore', gitIgnoreTemplate);
             const pkg = JSON.parse(
                 fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
             )
