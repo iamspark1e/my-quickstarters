@@ -12,6 +12,7 @@ const utils = [
 ]
 const templates = [
     { title: "Vue2 + Vite (Legacy) + MPA (with Vant v2)", value: "templates/frontend/vite-legacy-mpa" },
+    { title: "Express.js + Drizzle ORM (server only)", value: "templates/server/express-drizzle-template" },
     { title: "Vite + Express.js + Prisma (fullstack)", value: "templates/fullstack/vite-express-prisma-template" },
     { title: "Typescript NPM Packages (using tsup)", value: "templates/frontend/npm-package" },
 ]
