@@ -8,7 +8,7 @@ export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
     const isProd = process.env.NODE_ENV;
     return {
-        root: "./src",
+        root: "./web",
         publicDir: "../public",
         envDir: "../",
         build: {
