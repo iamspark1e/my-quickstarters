@@ -14,6 +14,7 @@ const templates = [
     { title: "Vue2 + Vite (Legacy) + MPA (with Vant v2)", value: "templates/frontend/vite-legacy-mpa" },
     { title: "Express.js + Drizzle ORM (server only)", value: "templates/server/express-drizzle-template" },
     { title: "Vite + Express.js + Prisma (fullstack)", value: "templates/fullstack/vite-express-prisma-template" },
+    { title: "Vite + Express.js + Drizzle (with CI & Dockerize support)", value: "templates/fullstack/vite-express-drizzle-ci-template" },
     { title: "Typescript NPM Packages (using tsup)", value: "templates/frontend/npm-package" },
 ]
 function copy(src, dest) {
