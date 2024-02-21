@@ -1,0 +1,34 @@
+name: ci
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+    name: Buildx Node.js Image
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Docker Private Registry Login
+        run: echo "your_password" | docker login --username <your_username> --password-stdin
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Build project
+        run: rm package-lock.json && npm install --no-audit && npm run web:build && rm -r node_modules # clear node_modules required by static assets build
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: |
+            linux/amd64
+            linux/arm64            
+          push: true
+          file: ./Dockerfile_ci
+          tags: |
+            vite-express-drizzle-ci-template:latest
+            vite-express-drizzle-ci-template:${{ github.sha }}
