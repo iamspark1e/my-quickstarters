@@ -19,6 +19,7 @@ export default defineConfig({
         babel(),
         autoMpaHtmlPlugin({
             entryName: "main.js",
+            configName: "config.js",
             enableDevDirectory: true,
             sharedData: {
                 NODE_ENV: process.env.NODE_ENV
