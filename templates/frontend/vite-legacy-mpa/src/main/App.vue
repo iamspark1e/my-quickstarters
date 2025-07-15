@@ -1,5 +1,5 @@
 <template>
-  <div id="app">Vue App</div>
+  <div>Vue App</div>
 </template>
 
 <script>

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import App from './App.vue'
 import 'vant/lib/index.css';
 
+Vue.use(Vuex);
 Vue.config.productionTip = false
 
 const router = new VueRouter({
